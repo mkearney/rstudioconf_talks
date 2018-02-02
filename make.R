@@ -79,6 +79,9 @@ render_talk("tidy_networks")
 
 system("git init")
 
-cat("*.html", fle = ".gitignore", fill = TRUE)
+cat("**.html", file = ".gitignore", fill = TRUE)
 system("git add .")
 system(paste0("git commit -m", sQuote("initial commit")))
+system("")
+
+rmarkdown::render("README.Rmd")
