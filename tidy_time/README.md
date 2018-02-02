@@ -9,20 +9,15 @@ Presenter
 Packages
 --------
 
--   [{tidyquant}](business-science/tidyquant)
+-   [business-science/tidyquant](https://github.com/business-science/tidyquant): Bringing financial analysis to the tidyverse
 
--   [{tibbletime}](business-science/tibbletime)
+-   [business-science/tibbletime](https://github.com/business-science/tibbletime): Time-aware tibbles
 
--   [{tidyfinance}](DavisVaughan/tidyfinance)
+-   [DavisVaughan/tidyfinance](https://github.com/DavisVaughan/tidyfinance):
 
 Functions
 ---------
 
--   `collapse_by`
+-   `tibbletime::collapse_by()`: Collapse a tbl\_time object by its index Collapse the index of a tbl\_time object by time period. The index column is altered so that all dates that fall in a specified interval share a common date.
 
--   `rollify`
-
-Slides
-------
-
--   [business-science/presentations](https://github.com/business-science/presentations)
+-   `tibbletime::rollify()`: Create a rolling version of any function rollify returns a rolling version of the input function, with a rolling window specified by the user.

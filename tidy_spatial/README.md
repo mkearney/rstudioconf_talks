@@ -9,19 +9,19 @@ Presenter
 Packages
 --------
 
--   [{sp}](r-spatial/sp)
+-   [r-spatial/sf](https://github.com/r-spatial/sf): Simple Features for R
 
--   [{sf}](r-spatial/sf)
-
--   [{mapview}](r-spatial/mapview)
-
--   [{stars}](r-spatial/stars)
+-   [r-spatial/stars](https://github.com/r-spatial/stars): Spatiotemporal tidy arrays for R
 
 Functions
 ---------
 
--   `sf`
+-   `sf::st_sf()`: Create sf object Create sf, which extends data.frame-like objects with a simple feature list column
 
--   `methods:filter,arrange/distinct/group_by`
+-   `sf::filter.sf()`: Dplyr verb methods for sf objects Dplyr verb methods for sf objects. Geometries are sticky, use as.data.frame to let dplyr's own methods drop them.
 
--   `geom_sf`
+-   `sf::arrange.sf()`: Dplyr verb methods for sf objects Dplyr verb methods for sf objects. Geometries are sticky, use as.data.frame to let dplyr's own methods drop them.
+
+-   `sf::group_by.sf()`: Dplyr verb methods for sf objects Dplyr verb methods for sf objects. Geometries are sticky, use as.data.frame to let dplyr's own methods drop them.
+
+-   `sf::distinct.sf()`: Dplyr verb methods for sf objects Dplyr verb methods for sf objects. Geometries are sticky, use as.data.frame to let dplyr's own methods drop them.

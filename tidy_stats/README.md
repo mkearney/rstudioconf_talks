@@ -9,13 +9,13 @@ Presenter
 Packages
 --------
 
--   [{infer}](andrewpbray/infer)
+-   [andrewpbray/infer](https://github.com/andrewpbray/infer): An R package for tidyverse-friendly statistical inference
 
 Functions
 ---------
 
--   `specify`
+-   `infer::specify()`: Specify the response and explanatory variables Specify the response and explanatory variables
 
--   `hypothesize`
+-   `infer::hypothesize()`: Declare a null hypothesis Declare a null hypothesis
 
--   `calculate`
+-   `infer::calculate()`: Calculate summary statistics Calculate summary statistics
