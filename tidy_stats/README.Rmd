@@ -1,0 +1,20 @@
+---
+title: "tidy_stats"
+output: github_document
+---
+
+## Presenter
+
++ [andrewpbray](https://github.com/)
+
+## Packages
+
++ [{infer}](andrewpbray/infer)
+
+## Functions
+
++ `specify`
+
++ `hypothesize`
+
++ `calculate`

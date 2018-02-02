@@ -1,0 +1,28 @@
+tidy\_time
+================
+
+Presenter
+---------
+
+-   [DavisVaughan](https://github.com/)
+
+Packages
+--------
+
+-   [{tidyquant}](business-science/tidyquant)
+
+-   [{tibbletime}](business-science/tibbletime)
+
+-   [{tidyfinance}](DavisVaughan/tidyfinance)
+
+Functions
+---------
+
+-   `collapse_by`
+
+-   `rollify`
+
+Slides
+------
+
+-   [business-science/presentations](https://github.com/business-science/presentations)
