@@ -76,3 +76,9 @@ init_talk("tidy_networks",
   funs = c("activate", "bind_edges", "bind_nodes", "bind_graphs",
            "ggraph", "geom_node_*", "geom_edges_*"))
 render_talk("tidy_networks")
+
+system("git init")
+
+cat("*.html", fle = ".gitignore", fill = TRUE)
+system("git add .")
+system(paste0("git commit -m", sQuote("initial commit")))
