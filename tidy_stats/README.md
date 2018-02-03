@@ -4,7 +4,7 @@ tidy\_stats
 Presenter
 ---------
 
--   [andrewpbray](https://github.com/)
+-   [andrewpbray](https://github.com/andrewpbray):
 
 Packages
 --------

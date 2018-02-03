@@ -4,7 +4,7 @@ tidy\_spatial
 Presenter
 ---------
 
--   [edzer](https://github.com/)
+-   [edzer](https://github.com/edzer): geoinformatics, spatial statistics, R.
 
 Packages
 --------

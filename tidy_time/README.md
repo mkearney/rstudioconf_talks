@@ -4,7 +4,7 @@ tidy\_time
 Presenter
 ---------
 
--   [DavisVaughan](https://github.com/)
+-   [DavisVaughan](https://github.com/DavisVaughan): Striving to make the lives of financial analysts easier by improving tools for time series analysis in R.
 
 Packages
 --------

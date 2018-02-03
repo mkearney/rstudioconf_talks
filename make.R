@@ -1,13 +1,16 @@
-## r
+## initialize git repo (and create repo on github.com)
+#system("git init")
+#cat("**.html", file = ".gitignore", fill = TRUE)
+#system("git add .")
+#system(paste0("git commit -m", sQuote("initial commit")))
+#system("git remote add origin git@github.com:mkearney/rstudioconf_talks.git")
+#system("git push -u origin master")
+#system("git push")
 
+## read in functions
 source("R/funs.R")
 
-match.fun("rtweet::search_tweets")
-
-match.fun(noquote("rtweet::search_tweets"))
-help(as.function("rtweet::search_tweets"))
-install.packages("stars")
-
+## build talk directories
 init_talk("tidy_spatial",
   author = "edzer",
   pkgs = c("r-spatial/sf", "r-spatial/stars"),
@@ -20,13 +23,13 @@ init_talk("tidy_time",
   pkgs = c("business-science/tidyquant", "business-science/tibbletime",
     "DavisVaughan/tidyfinance"),
   funs = c("tibbletime::collapse_by", "tibbletime::rollify"))
-render_talk("tidy_time")
+render_talk("tidy_time", open = FALSE)
 
 init_talk("tidy_stats",
   author = "andrewpbray",
   pkgs = c("andrewpbray/infer"),
   funs = c("infer::specify", "infer::hypothesize", "infer::calculate"))
-render_talk("tidy_stats")
+render_talk("tidy_stats", open = FALSE)
 
 init_talk("tidy_networks",
   author = "thomasp85",
@@ -35,29 +38,61 @@ init_talk("tidy_networks",
     "tidygraph::bind_nodes", "tidygraph::bind_graphs",
     "ggraph::ggraph", "ggraph::geom_node_point",
     "ggraph::geom_edge_link"))
-render_talk("tidy_networks")
+render_talk("tidy_networks", open = FALSE)
 
-system("git init")
-cat("**.html", file = ".gitignore", fill = TRUE)
+init_talk("tidy_modeling",
+  author = "topepo",
+  pkgs = "topepo/caret",
+  funs = c("caret::train")
+)
+render_talk("tidy_modeling", open = FALSE)
 
+
+init_talk("tidy_eval",
+  author = "hadley",
+  pkgs = "tidyverse/rlang",
+  funs = c("rlang::expr", "rlang::enxpr",
+    "rlang::quo", "rlang::enquo",
+    "rlang::!!", "rlang::!!!",
+    "rlang::eval_tidy")
+)
+render_talk("tidy_eval")
+
+
+## add and commit changes and then push to github
 system("git add .")
-system(paste0("git commit -m", sQuote("initial commit")))
-system("git remote add origin git@github.com:mkearney/rstudioconf_talks.git")
-system("git push -u origin master")
-
+system(paste0("git commit -m", sQuote("edits")))
 system("git push")
 
-rmarkdown::render("README.Rmd")
-?xml2::xml_document
+
+ex1 <- expr(x + y)
 
 
-xml2::as_xml_document(as.character(xt))
-rvest::html_node(xml2::read_html(as.character(xt)), "h2")
+library(rlang)
+?dplyr::mutate_if
+
+as.numeric.tbl_df <- function(.data, ...) {
+  dots <- quos(...)
+  dplyr::mutate_if(.data,
+    names(.data) %in% names(dplyr::select(.data, !!!dots)),
+    as.numeric)
+}
 
 
+as_numeric <- function(.data, ...) {
+  dots <- quos(...)
+  dplyr::mutate_if(.data,
+    names(.data) %in% names(dplyr::select(.data, !!!dots)),
+    as.numeric)
+}
 
-init_talk(
-  "tidy_modeling",
-  author = "topepo",
-  pkgs = "caret",
-)
+as_character <- function(.data, ...) {
+  dots <- quos(...)
+  dplyr::mutate_if(.data,
+    names(.data) %in% names(dplyr::select(.data, !!!dots)),
+    as.character)
+}
+
+mtcars <- dplyr::tbl_df(mtcars)
+as_numeric(mtcars, cyl, mpg)
+as_character(mtcars, cyl, mpg)

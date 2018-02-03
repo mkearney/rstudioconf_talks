@@ -5,7 +5,7 @@ output: github_document
 
 ## Presenter
 
-+ [andrewpbray](https://github.com/)
++ [andrewpbray](https://github.com/andrewpbray): 
 
 ## Packages
 

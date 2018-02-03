@@ -1,6 +1,10 @@
 ## r
 
 rmd_gh <- function(talk, author = "", pkgs = "", funs = "") {
+  bio <- xml2::read_html(paste0("https://github.com/", author))
+  bio <- rvest::html_text(
+    rvest::html_nodes(bio, ".p-note > div:nth-child(1)"))
+  if (length(bio) == 0L) bio <- ""
   paste0('---
 title: "', talk, '"
 output: github_document
@@ -8,7 +12,8 @@ output: github_document
 
 ## Presenter
 
-+ [', author, '](https://github.com/)
++ [', author, '](https://github.com/', author, '): ',
+    bio, '
 
 ## Packages
 

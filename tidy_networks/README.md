@@ -4,7 +4,7 @@ tidy\_networks
 Presenter
 ---------
 
--   [thomasp85](https://github.com/)
+-   [thomasp85](https://github.com/thomasp85): Biology + Data Science
 
 Packages
 --------
